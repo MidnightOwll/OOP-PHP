@@ -39,5 +39,20 @@ class Person {
 }
 
 $person1 = new Person('Демиденко', 'Виталий', '22');
+$person2 = new Person('Петров', 'Петр', '24');
 echo $person1->hello();
+echo "<br>";
+echo $person2->hello();
+echo "<br>";
+echo "<br>";
+//Наследование
+class Proger extends Person {
+    private $prLang;
 
+    public function __construct($lastName, $name, $age, $prLang){
+        parent::__construct($lastName, $name, $age);
+        $this->prLang = $prLang;
+    }   
+}
+$proger1 = new Proger('Демиденко', 'Станистлав', '18', 'PHP');
+echo $proger1->hello();
